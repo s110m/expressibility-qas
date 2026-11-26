@@ -1,0 +1,1 @@
+{"step": "evaluation", "status": "completed", "start_time": "2026-10-19T23:45:39.912683", "end_time": "2026-10-19T23:48:08.907433", "elapsed_seconds": 148.9959125999958, "config": "examples/configs/mnist/four0123/eval/athens/noise/opt2/all.yml", "run_dir": "runs/mnist.four0123.train.searched.scratch.athens.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.ga_split_s101_seed42"}

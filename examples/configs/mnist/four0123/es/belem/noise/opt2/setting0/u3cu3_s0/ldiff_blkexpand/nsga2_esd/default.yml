@@ -1,0 +1,46 @@
+# THREE-OBJECTIVE NSGA-II search config (M4). Sibling of ../nsga2/default.yml,
+# differing ONLY in the objectives list -- everything else (population, budget,
+# mutation rate, pinned expressibility estimator) is held identical so that a
+# comparison against the two-objective M3 runs at the same search seeds is
+# paired rather than confounded.
+#
+# WHY depth. Section "Noise Makes the Full-Size Circuit the Wrong Circuit"
+# measured noisy accuracy peaking at INTERIOR depth while expressibility
+# improves monotonically with depth. Expressibility alone therefore pushes the
+# search toward over-deepening and has no counterweight. Transpiled depth is
+# that counterweight, and it costs nothing extra: core/tools/nsga2.py computes
+# depth, success_rate and swap_count from the SAME transpiled circuit inside one
+# `if needs_transpile:` block, cached by (trimmed-arch, layout). Adding depth to
+# the existing pair is one extra .depth() call per uncached candidate.
+#
+# WHY NOT four objectives. NSGA-II's Pareto ranking loses discriminating power
+# as objectives multiply -- most of the population goes non-dominated and
+# crowding distance becomes a weak diversity surrogate. The M3 finding is
+# already that the four layout genes receive no effective selection pressure;
+# diluting pressure further across four objectives is more likely to deepen that
+# negative than repair it. swap_count is left unsearched on purpose.
+#
+# WHY the run dir is safe. run_nsga2.py:209 derives
+# es_runs/<config-path-with-dots>_seed<debug.seed>, so `nsga2_esd` in this path
+# is what keeps these runs beside, not on top of, the M3 `nsga2` runs.
+#
+# qiskit.use_qiskit: False -- unchanged and still correct. depth and
+# success_rate both read the transpiled circuit and the calibration tables; no
+# objective executes the circuit under a noise model.
+qiskit:
+  use_qiskit: False
+
+es:
+  nsga2:
+    # available: expressibility, depth, success_rate, swap_count
+    objectives: [expressibility, success_rate, depth]
+    pop_size: 40
+    n_gen: 40
+    mutation_prob: 0.4
+    expressibility:
+      # Identical to ../nsga2/default.yml on purpose: same pinned draw, so KL
+      # values are directly comparable between M2, M3 and M4. If you change one,
+      # change all three.
+      n_pairs: 150
+      nbins: 75
+      seed: 1234

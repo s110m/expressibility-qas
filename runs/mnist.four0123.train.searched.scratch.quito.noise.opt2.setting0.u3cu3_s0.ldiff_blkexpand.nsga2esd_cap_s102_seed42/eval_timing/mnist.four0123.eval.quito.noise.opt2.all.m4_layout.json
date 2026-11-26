@@ -1,0 +1,1 @@
+{"step": "evaluation", "status": "completed", "start_time": "2026-09-01T00:20:30.393339", "end_time": "2026-09-01T00:24:30.898233", "elapsed_seconds": 240.50488854199648, "config": "examples/configs/mnist/four0123/eval/quito/noise/opt2/all.yml", "run_dir": "runs/mnist.four0123.train.searched.scratch.quito.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.nsga2esd_cap_s102_seed42"}

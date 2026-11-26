@@ -1,0 +1,76 @@
+{
+ "joint_search": {
+  "layout": [
+   1,
+   0,
+   3,
+   2
+  ],
+  "accuracy_percent": 79.69689680057735,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.belem.noise.opt2.all.local_joint_search_layout.json"
+ },
+ "enumeration": {
+  "layout": [
+   4,
+   3,
+   1,
+   2
+  ],
+  "accuracy_percent": 80.00962232379119,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.belem.noise.opt2.all.local_enumeration_layout.json"
+ },
+ "oracle": {
+  "layout": [
+   2,
+   0,
+   4,
+   1
+  ],
+  "accuracy_percent": 81.18835698821265,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.belem.noise.opt2.all.local_oracle_layout.json"
+ },
+ "mapomatic": {
+  "layout": [
+   1,
+   2,
+   3,
+   0
+  ],
+  "accuracy_percent": 80.37045946596103,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.belem.noise.opt2.all.local_mapomatic_layout.json"
+ },
+ "tket": {
+  "layout": [
+   3,
+   1,
+   0,
+   4
+  ],
+  "accuracy_percent": 81.26052441664662,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.belem.noise.opt2.all.local_tket_layout.json"
+ },
+ "qiskit_l2_free": {
+  "layout": null,
+  "accuracy_percent": 80.80346403656483,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.belem.noise.opt2.all.qiskit_layout.local_l2.json"
+ },
+ "qiskit_l3_free": {
+  "layout": null,
+  "accuracy_percent": 80.77940822708685,
+  "n_samples": 4157,
+  "optimization_level": 3,
+  "source": "mnist.four0123.eval.belem.noise.opt2.all.qiskit_layout.local_l3.json"
+ }
+}

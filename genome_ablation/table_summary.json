@@ -1,0 +1,746 @@
+{
+ "p0.05": {
+  "n_runs": 9,
+  "rank_mean": 38.111111111111114,
+  "rank_median": 41.0,
+  "top5pct": 1,
+  "events_mean": 801.0,
+  "layouts_tried_median": 1.0,
+  "blocks_mean": 5.777777777777778,
+  "n_acc": 0,
+  "runs": [
+   {
+    "backend": "FakeAthensV2",
+    "seed": 100,
+    "rank": 98,
+    "blocks": 8,
+    "params": 114,
+    "events": 934,
+    "acc": null
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 101,
+    "rank": 41,
+    "blocks": 4,
+    "params": 57,
+    "events": 844,
+    "acc": null
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 102,
+    "rank": 58,
+    "blocks": 8,
+    "params": 105,
+    "events": 764,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 100,
+    "rank": 54,
+    "blocks": 8,
+    "params": 114,
+    "events": 884,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 101,
+    "rank": 12,
+    "blocks": 6,
+    "params": 99,
+    "events": 631,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 102,
+    "rank": 9,
+    "blocks": 3,
+    "params": 54,
+    "events": 755,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 100,
+    "rank": 60,
+    "blocks": 7,
+    "params": 99,
+    "events": 888,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 101,
+    "rank": 10,
+    "blocks": 4,
+    "params": 72,
+    "events": 668,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 102,
+    "rank": 1,
+    "blocks": 4,
+    "params": 60,
+    "events": 841,
+    "acc": null
+   }
+  ]
+ },
+ "p0.1": {
+  "n_runs": 9,
+  "rank_mean": 37.111111111111114,
+  "rank_median": 23.0,
+  "top5pct": 2,
+  "events_mean": 802.5555555555555,
+  "layouts_tried_median": 1.0,
+  "blocks_mean": 6.111111111111111,
+  "n_acc": 0,
+  "runs": [
+   {
+    "backend": "FakeAthensV2",
+    "seed": 100,
+    "rank": 98,
+    "blocks": 8,
+    "params": 114,
+    "events": 838,
+    "acc": null
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 101,
+    "rank": 5,
+    "blocks": 3,
+    "params": 51,
+    "events": 887,
+    "acc": null
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 102,
+    "rank": 12,
+    "blocks": 4,
+    "params": 75,
+    "events": 683,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 100,
+    "rank": 23,
+    "blocks": 8,
+    "params": 135,
+    "events": 646,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 101,
+    "rank": 3,
+    "blocks": 4,
+    "params": 57,
+    "events": 885,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 102,
+    "rank": 54,
+    "blocks": 8,
+    "params": 123,
+    "events": 809,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 100,
+    "rank": 18,
+    "blocks": 8,
+    "params": 114,
+    "events": 903,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 101,
+    "rank": 40,
+    "blocks": 5,
+    "params": 75,
+    "events": 870,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 102,
+    "rank": 81,
+    "blocks": 7,
+    "params": 108,
+    "events": 702,
+    "acc": null
+   }
+  ]
+ },
+ "p0.2": {
+  "n_runs": 9,
+  "rank_mean": 39.333333333333336,
+  "rank_median": 39.0,
+  "top5pct": 2,
+  "events_mean": 654.1111111111111,
+  "layouts_tried_median": 1.0,
+  "blocks_mean": 6.111111111111111,
+  "n_acc": 0,
+  "runs": [
+   {
+    "backend": "FakeAthensV2",
+    "seed": 100,
+    "rank": 98,
+    "blocks": 8,
+    "params": 114,
+    "events": 668,
+    "acc": null
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 101,
+    "rank": 56,
+    "blocks": 3,
+    "params": 42,
+    "events": 561,
+    "acc": null
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 102,
+    "rank": 37,
+    "blocks": 7,
+    "params": 93,
+    "events": 789,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 100,
+    "rank": 54,
+    "blocks": 8,
+    "params": 114,
+    "events": 727,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 101,
+    "rank": 1,
+    "blocks": 4,
+    "params": 66,
+    "events": 606,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 102,
+    "rank": 4,
+    "blocks": 4,
+    "params": 75,
+    "events": 548,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 100,
+    "rank": 18,
+    "blocks": 8,
+    "params": 114,
+    "events": 702,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 101,
+    "rank": 47,
+    "blocks": 5,
+    "params": 81,
+    "events": 745,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 102,
+    "rank": 39,
+    "blocks": 8,
+    "params": 129,
+    "events": 541,
+    "acc": null
+   }
+  ]
+ },
+ "p0.4": {
+  "n_runs": 9,
+  "rank_mean": 74.44444444444444,
+  "rank_median": 89.0,
+  "top5pct": 0,
+  "events_mean": 408.1111111111111,
+  "layouts_tried_median": 1.0,
+  "blocks_mean": 6.555555555555555,
+  "n_acc": 9,
+  "runs": [
+   {
+    "backend": "FakeAthensV2",
+    "seed": 100,
+    "rank": 108,
+    "blocks": 6,
+    "params": 117,
+    "events": 375,
+    "acc": {
+     "gj": 80.53885013230695,
+     "ge": 80.418571084917
+    }
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 101,
+    "rank": 65,
+    "blocks": 8,
+    "params": 126,
+    "events": 479,
+    "acc": {
+     "gj": 78.61438537406784,
+     "ge": 79.23983642049555
+    }
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 102,
+    "rank": 14,
+    "blocks": 5,
+    "params": 84,
+    "events": 322,
+    "acc": {
+     "gj": 79.57661775318739,
+     "ge": 81.62136155881645
+    }
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 100,
+    "rank": 108,
+    "blocks": 6,
+    "params": 99,
+    "events": 459,
+    "acc": {
+     "gj": 77.1950926148665,
+     "ge": 78.99927832571566
+    }
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 101,
+    "rank": 95,
+    "blocks": 8,
+    "params": 111,
+    "events": 351,
+    "acc": {
+     "gj": 79.02333413519365,
+     "ge": 80.29829203752706
+    }
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 102,
+    "rank": 89,
+    "blocks": 3,
+    "params": 54,
+    "events": 343,
+    "acc": {
+     "gj": 72.11931681501082,
+     "ge": 72.31176329083475
+    }
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 100,
+    "rank": 18,
+    "blocks": 8,
+    "params": 114,
+    "events": 393,
+    "acc": {
+     "gj": 76.68992061582873,
+     "ge": 76.93047871060861
+    }
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 101,
+    "rank": 55,
+    "blocks": 7,
+    "params": 90,
+    "events": 505,
+    "acc": {
+     "gj": 79.28794803945152,
+     "ge": 79.60067356266538
+    }
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 102,
+    "rank": 118,
+    "blocks": 8,
+    "params": 117,
+    "events": 446,
+    "acc": {
+     "gj": 72.04714938657686,
+     "ge": 76.088525378879
+    }
+   }
+  ],
+  "acc_deployed": 77.23251276294337,
+  "acc_enum": 78.38986448560661,
+  "gap_mean": 1.1573517226632457,
+  "gap_t": 2.6305060898885997
+ },
+ "tournament": {
+  "n_runs": 9,
+  "rank_mean": 51.666666666666664,
+  "rank_median": 48.0,
+  "top5pct": 2,
+  "events_mean": 445.3333333333333,
+  "layouts_tried_median": 1.0,
+  "blocks_mean": 6.666666666666667,
+  "n_acc": 0,
+  "runs": [
+   {
+    "backend": "FakeAthensV2",
+    "seed": 100,
+    "rank": 98,
+    "blocks": 6,
+    "params": 99,
+    "events": 531,
+    "acc": null
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 101,
+    "rank": 21,
+    "blocks": 8,
+    "params": 114,
+    "events": 369,
+    "acc": null
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 102,
+    "rank": 82,
+    "blocks": 6,
+    "params": 105,
+    "events": 409,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 100,
+    "rank": 33,
+    "blocks": 7,
+    "params": 114,
+    "events": 445,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 101,
+    "rank": 1,
+    "blocks": 8,
+    "params": 141,
+    "events": 518,
+    "acc": null
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 102,
+    "rank": 114,
+    "blocks": 7,
+    "params": 123,
+    "events": 429,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 100,
+    "rank": 3,
+    "blocks": 8,
+    "params": 117,
+    "events": 474,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 101,
+    "rank": 48,
+    "blocks": 4,
+    "params": 63,
+    "events": 396,
+    "acc": null
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 102,
+    "rank": 65,
+    "blocks": 6,
+    "params": 111,
+    "events": 437,
+    "acc": null
+   }
+  ]
+ },
+ "split": {
+  "n_runs": 9,
+  "rank_mean": 42.0,
+  "rank_median": 30.0,
+  "top5pct": 1,
+  "events_mean": 664.8888888888889,
+  "layouts_tried_median": 2.0,
+  "blocks_mean": 5.777777777777778,
+  "n_acc": 9,
+  "runs": [
+   {
+    "backend": "FakeAthensV2",
+    "seed": 100,
+    "rank": 98,
+    "blocks": 8,
+    "params": 114,
+    "events": 678,
+    "acc": {
+     "gj": 78.56627375511187,
+     "ge": 78.80683184989175
+    }
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 101,
+    "rank": 28,
+    "blocks": 8,
+    "params": 123,
+    "events": 548,
+    "acc": {
+     "gj": 79.19172480153958,
+     "ge": 78.42193889824392
+    }
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 102,
+    "rank": 12,
+    "blocks": 4,
+    "params": 75,
+    "events": 554,
+    "acc": {
+     "gj": 78.61438537406784,
+     "ge": 78.13326918450805
+    }
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 100,
+    "rank": 9,
+    "blocks": 6,
+    "params": 102,
+    "events": 693,
+    "acc": {
+     "gj": 79.3120038489295,
+     "ge": 79.16766899206158
+    }
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 101,
+    "rank": 57,
+    "blocks": 7,
+    "params": 105,
+    "events": 780,
+    "acc": {
+     "gj": 79.21578061101756,
+     "ge": 79.81717584796728
+    }
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 102,
+    "rank": 43,
+    "blocks": 3,
+    "params": 54,
+    "events": 630,
+    "acc": {
+     "gj": 72.02309357709888,
+     "ge": 72.31176329083475
+    }
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 100,
+    "rank": 99,
+    "blocks": 8,
+    "params": 123,
+    "events": 707,
+    "acc": {
+     "gj": 76.59369737791677,
+     "ge": 78.0611017560741
+    }
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 101,
+    "rank": 30,
+    "blocks": 4,
+    "params": 51,
+    "events": 745,
+    "acc": {
+     "gj": 72.62448881404859,
+     "ge": 74.16406062063989
+    }
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 102,
+    "rank": 2,
+    "blocks": 4,
+    "params": 75,
+    "events": 649,
+    "acc": {
+     "gj": 75.6555208082752,
+     "ge": 75.60740918931921
+    }
+   }
+  ],
+  "acc_deployed": 76.86632988533398,
+  "acc_enum": 77.16569106994895,
+  "gap_mean": 0.2993611846149709,
+  "gap_t": 1.128452736385282
+ },
+ "staged": {
+  "n_runs": 9,
+  "rank_mean": 4.333333333333333,
+  "rank_median": 2.0,
+  "top5pct": 8,
+  "events_mean": 1018.2222222222222,
+  "layouts_tried_median": 42.0,
+  "blocks_mean": 6.111111111111111,
+  "n_acc": 9,
+  "runs": [
+   {
+    "backend": "FakeAthensV2",
+    "seed": 100,
+    "rank": 1,
+    "blocks": 8,
+    "params": 114,
+    "events": 1043,
+    "acc": {
+     "gj": 78.80683184989175,
+     "ge": 78.80683184989175
+    }
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 101,
+    "rank": 3,
+    "blocks": 8,
+    "params": 123,
+    "events": 1013,
+    "acc": {
+     "gj": 80.68318498917489,
+     "ge": 81.16430117873466
+    }
+   },
+   {
+    "backend": "FakeAthensV2",
+    "seed": 102,
+    "rank": 1,
+    "blocks": 4,
+    "params": 75,
+    "events": 989,
+    "acc": {
+     "gj": 78.13326918450805,
+     "ge": 78.13326918450805
+    }
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 100,
+    "rank": 2,
+    "blocks": 8,
+    "params": 114,
+    "events": 1059,
+    "acc": {
+     "gj": 78.54221794563388,
+     "ge": 79.02333413519365
+    }
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 101,
+    "rank": 24,
+    "blocks": 3,
+    "params": 42,
+    "events": 1068,
+    "acc": {
+     "gj": 76.16069280731297,
+     "ge": 76.088525378879
+    }
+   },
+   {
+    "backend": "FakeBelemV2",
+    "seed": 102,
+    "rank": 2,
+    "blocks": 6,
+    "params": 105,
+    "events": 926,
+    "acc": {
+     "gj": 79.04738994467164,
+     "ge": 77.79648785181621
+    }
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 100,
+    "rank": 3,
+    "blocks": 8,
+    "params": 114,
+    "events": 1069,
+    "acc": {
+     "gj": 76.76208804426268,
+     "ge": 76.93047871060861
+    }
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 101,
+    "rank": 1,
+    "blocks": 6,
+    "params": 96,
+    "events": 999,
+    "acc": {
+     "gj": 77.77243204233822,
+     "ge": 77.77243204233822
+    }
+   },
+   {
+    "backend": "FakeQuitoV2",
+    "seed": 102,
+    "rank": 2,
+    "blocks": 4,
+    "params": 75,
+    "events": 998,
+    "acc": {
+     "gj": 75.6555208082752,
+     "ge": 75.60740918931921
+    }
+   }
+  ],
+  "acc_deployed": 77.95151417956326,
+  "acc_enum": 77.9247855023655,
+  "gap_mean": -0.026728677197768193,
+  "gap_t": -0.15812870826980233
+ }
+}

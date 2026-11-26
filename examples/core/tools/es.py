@@ -1,0 +1,345 @@
+import numpy as np
+import random
+import itertools
+from torchpack.utils.logging import logger
+
+__all__ = ['SimpleGA', 'EvolutionEngine', 'Converter', 'legalize_layout_gene',
+           'apply_gene_mask']
+
+
+def compute_weight_decay(weight_decay, model_param_list):
+    model_param_grid = np.array(model_param_list)
+    return - weight_decay * np.mean(model_param_grid * model_param_grid,
+                                    axis=1)
+
+
+class SimpleGA(object):
+    """Simple Genetic Algorithm."""
+    def __init__(self, num_params,      # number of model parameters
+                 sigma_init=0.1,        # initial standard deviation
+                 sigma_decay=0.999,     # anneal standard deviation
+                 sigma_limit=0.01,      # stop annealing if less than this
+                 popsize=256,           # population size
+                 elite_ratio=0.1,       # percentage of the elites
+                 forget_best=False,     # forget the historical best elites
+                 weight_decay=0.01,     # weight decay coefficient
+                 ):
+
+        self.num_params = num_params
+        self.sigma_init = sigma_init
+        self.sigma_decay = sigma_decay
+        self.sigma_limit = sigma_limit
+        self.popsize = popsize
+
+        self.elite_ratio = elite_ratio
+        self.elite_popsize = int(self.popsize * self.elite_ratio)
+
+        self.sigma = self.sigma_init
+        self.elite_params = np.zeros((self.elite_popsize, self.num_params))
+        self.elite_rewards = np.zeros(self.elite_popsize)
+        self.best_param = np.zeros(self.num_params)
+        self.best_reward = 0
+        self.first_iteration = True
+        self.forget_best = forget_best
+        self.weight_decay = weight_decay
+        self.epsilon = None
+        self.solutions = None
+        self.curr_best_reward = None
+
+    def rms_stdev(self):
+        return self.sigma  # same sigma for all parameters.
+
+    def ask(self):
+        """returns a list of parameters"""
+        self.epsilon = np.random.randn(self.popsize,
+                                       self.num_params) * self.sigma
+        solutions = []
+
+        def mate(a, b):
+            c = np.copy(a)
+            idx = np.where(np.random.rand(c.size) > 0.5)
+            c[idx] = b[idx]
+            return c
+
+        elite_range = range(self.elite_popsize)
+        for i in range(self.popsize):
+            idx_a = np.random.choice(elite_range)
+            idx_b = np.random.choice(elite_range)
+            child_params = mate(self.elite_params[idx_a],
+                                self.elite_params[idx_b])
+            solutions.append(child_params + self.epsilon[i])
+
+        solutions = np.array(solutions)
+        self.solutions = solutions
+
+        return solutions
+
+    def tell(self, reward_table_result):
+        # input must be a numpy float array
+        assert(len(reward_table_result) == self.popsize), \
+            "Inconsistent reward_table size reported."
+
+        reward_table = np.array(reward_table_result)
+
+        if self.weight_decay > 0:
+            l2_decay = compute_weight_decay(self.weight_decay, self.solutions)
+            reward_table += l2_decay
+
+        if self.forget_best or self.first_iteration:
+            reward = reward_table
+            solution = self.solutions
+        else:
+            reward = np.concatenate([reward_table, self.elite_rewards])
+            solution = np.concatenate([self.solutions, self.elite_params])
+
+        idx = np.argsort(reward)[::-1][0:self.elite_popsize]
+
+        self.elite_rewards = reward[idx]
+        self.elite_params = solution[idx]
+
+        self.curr_best_reward = self.elite_rewards[0]
+
+        if self.first_iteration or (self.curr_best_reward > self.best_reward):
+            self.first_iteration = False
+            self.best_reward = self.elite_rewards[0]
+            self.best_param = np.copy(self.elite_params[0])
+
+        if self.sigma > self.sigma_limit:
+            self.sigma *= self.sigma_decay
+
+    def current_param(self):
+        return self.elite_params[0]
+
+    def set_mu(self, mu):
+        pass
+
+    def best_param(self):
+        return self.best_param
+
+    def result(self):
+        # return best params so far, along with historically best reward,
+        # curr reward, sigma
+        return (self.best_param, self.best_reward,
+                self.curr_best_reward, self.sigma)
+
+
+def legalize_layout_gene(gene, n_wires, n_available_wires=None):
+    """Find the nearest legal layout, replacing repeated qubits with unused
+    ones, so that different logical qubits map to different physical qubits.
+
+    The replacement is drawn at random from the free qubits. It used to take the
+    lowest free index, which skewed the proposal distribution toward
+    low-numbered qubits: over 300k uniform draws on a 5-qubit backend the
+    post-repair marginals ran 24.0% for qubit 0 down to 14.8% for qubit 4,
+    against 20% uniform. Every layout stayed reachable, since a legal one is
+    passed through untouched, and the measured cost was small -- reweighting the
+    nine joint-search checkpoints' 120-layout accuracy landscapes by the old
+    distribution rather than uniformly costs 0.03 accuracy points on average,
+    0.15 on Quito -- but the operator was not neutral.
+
+    `n_available_wires` is the device's qubit count and defaults to `n_wires`,
+    which is what the pool used to be sized from. That default is behaviourally
+    inert and kept only for callers that do not know the backend: a layout of
+    n_wires genes with d duplicates leaves at least d of {0..n_wires-1} free, so
+    the old lowest-first rule never reached an index the short pool omitted. The
+    fill order was doing all the work, not the pool size.
+
+    Searches run before this change are not comparable with ones after, since
+    the genome draws shift. Do not mix them in one table.
+    """
+    if n_available_wires is None:
+        n_available_wires = n_wires
+    unused_qubits = list(range(n_available_wires))
+    current_layout = gene[:n_wires]
+    new_layout = []
+    for qubit in current_layout:
+        if qubit in unused_qubits:
+            unused_qubits.remove(qubit)
+
+    for qubit in current_layout:
+        if qubit not in new_layout:
+            new_layout.append(qubit)
+        else:
+            replacement = random.choice(unused_qubits)
+            new_layout.append(replacement)
+            unused_qubits.remove(replacement)
+
+    return new_layout + gene[n_wires:]
+
+
+def apply_gene_mask(gene, gene_mask):
+    masked_gene = gene.copy()
+    if gene_mask is not None:
+        for k, mask_val in enumerate(gene_mask):
+            if not mask_val == -1:
+                masked_gene[k] = mask_val
+
+    return masked_gene
+
+
+class Converter(object):
+    def __init__(self, n_wires, n_available_wires, arch_space):
+        self.n_wires = n_wires
+        self.n_available_wires = n_available_wires
+        self.arch_space = arch_space
+
+    @staticmethod
+    def solution2gene(solution):
+        return solution['layout'] + solution['arch']
+
+    def gene2solution(self, gene):
+        return {'layout': gene[:self.n_wires], 'arch': gene[self.n_wires:]}
+
+    def get_gene_choice(self):
+        return [list(range(self.n_available_wires))] * self.n_wires + \
+            self.arch_space
+
+
+class EvolutionEngine(object):
+    def __init__(self,
+                 population_size,
+                 parent_size,
+                 mutation_size,
+                 mutation_prob,
+                 crossover_size,
+                 n_wires,
+                 n_available_wires,
+                 arch_space,
+                 gene_mask=None,
+                 enumerate_layout=False,
+                 random_search=False,
+                 legalize_layout=False,
+                 ):
+        self.population_size = population_size
+        self.parent_size = parent_size
+        self.mutation_size = mutation_size
+        self.mutation_prob = mutation_prob
+        self.crossover_size = crossover_size
+        assert self.population_size == self.parent_size + self.mutation_size \
+               + self.crossover_size
+
+        self.n_wires = n_wires
+        self.n_available_wires = n_available_wires
+        self.arch_space = arch_space
+
+        self.converter = Converter(
+            self.n_wires,
+            self.n_available_wires,
+            self.arch_space
+        )
+
+        self.gene_choice = self.converter.get_gene_choice()
+        self.gene_len = len(self.gene_choice)
+        self.best_solution = None
+        self.best_score = None
+
+        self.random_search = random_search
+
+        self.legalize_layout = legalize_layout
+
+        # to constraint the design space in a fine-grained manner
+        self.gene_mask = gene_mask
+        if gene_mask is not None and \
+                all(np.array(gene_mask[:n_wires]) == -1) and \
+                all(np.array(gene_mask[n_wires:]) > -1) and enumerate_layout:
+            # enumerate all possible layouts and only need run 1 iteration
+            logger.warning(f"Shift to exhaustive search for best layout, "
+                           f"surpass all evolution configs!")
+            self.population = self.enumerate_layout()
+        else:
+            # initialize with random samples
+            self.population = self.random_sample(self.population_size)
+
+    def enumerate_layout(self):
+        population = []
+        for layout in itertools.permutations(
+                list(range(self.n_available_wires)), r=self.n_wires):
+            population.append(list(layout) + self.gene_mask[self.n_wires:])
+        return population
+
+    def ask(self):
+        """return the solutions"""
+        return [self.converter.gene2solution(gene) for gene in self.population]
+
+    def tell(self, scores):
+        """perform evo search according to the scores"""
+        sorted_idx = np.array(scores).argsort()[:self.parent_size]
+        self.best_solution = self.converter.gene2solution(self.population[
+                                                           sorted_idx[0]])
+        parents = [self.population[i] for i in sorted_idx]
+        self.best_score = scores[sorted_idx[0]]
+
+        if self.random_search:
+            new_rand = self.random_sample(self.population_size -
+                                          self.parent_size)
+            self.population = parents + new_rand
+        else:
+            # mutation
+            mutate_population = []
+            k = 0
+            while k < self.mutation_size:
+                mutated_gene = self.mutate(random.choices(parents)[0])
+                mutated_gene = self.apply_gene_mask(mutated_gene)
+                satis, legal_gene = self.satisfy_constraints(mutated_gene)
+                if satis:
+                    mutate_population.append(legal_gene)
+                    k += 1
+
+            # crossover
+            crossover_population = []
+            k = 0
+            while k < self.crossover_size:
+                crossovered_gene = self.crossover(random.sample(parents, 2))
+                crossovered_gene = self.apply_gene_mask(crossovered_gene)
+                satis, legal_gene = self.satisfy_constraints(crossovered_gene)
+                if satis:
+                    crossover_population.append(legal_gene)
+                    k += 1
+
+            self.population = parents + mutate_population + \
+                crossover_population
+
+    def crossover(self, genes):
+        crossovered_gene = []
+        for i in range(self.gene_len):
+            if np.random.uniform() < 0.5:
+                crossovered_gene.append(genes[0][i])
+            else:
+                crossovered_gene.append(genes[1][i])
+        return crossovered_gene
+
+    def mutate(self, gene):
+        mutated_gene = []
+        for i in range(self.gene_len):
+            if np.random.uniform() < self.mutation_prob:
+                mutated_gene.append(random.choices(self.gene_choice[i])[0])
+            else:
+                mutated_gene.append(gene[i])
+        return mutated_gene
+
+    def satisfy_constraints(self, gene):
+        # Different logical qubits map to different physical qubits
+        if self.legalize_layout:
+            return True, legalize_layout_gene(gene, self.n_wires,
+                                              self.n_available_wires)
+        else:
+            return len(set(gene[:self.n_wires])) == self.n_wires, gene
+
+    def apply_gene_mask(self, sample_gene):
+        return apply_gene_mask(sample_gene, self.gene_mask)
+
+    def random_sample(self, sample_num):
+        population = []
+        i = 0
+        while i < sample_num:
+            samp_gene = []
+            for k in range(self.gene_len):
+                samp_gene.append(random.choices(self.gene_choice[k])[0])
+            samp_gene = self.apply_gene_mask(samp_gene)
+
+            satis, legal_gene = self.satisfy_constraints(samp_gene)
+            if satis:
+                population.append(legal_gene)
+                i += 1
+
+        return population

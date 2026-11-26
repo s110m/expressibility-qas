@@ -1,0 +1,51 @@
+# PURE-QUANTUM NSGA-II search config (Paper 2 / M3 -- see PAPER_STORY_PURE.md).
+#
+# Pure-quantum sibling of ../../hybrid_full/nsga2/default.yml. The only reason it
+# lives under ldiff_blkexpand/ rather than hybrid_full/ is that the parent
+# directory is what decides the model: ldiff_blkexpand/ carries no `hybrid` block,
+# so model.arch.hybrid.mode stays unset and SuperQFCModel0 builds NO classical
+# h_phi/g_phi. Expect "Model Size: 192", never 484.
+#
+# ldiff_blkexpand also pins the supernet sampling strategy to the one every
+# completed supernet in this fork used (n_diffs 7 / n_chunks 3 / n_stages 40).
+# Do not move this under plain/ -- that resolves to a different strategy and the
+# mismatch has already forced a ~60 h re-run once.
+#
+# qiskit.use_qiskit: False -- neither objective executes the circuit under a noise
+# model. `expressibility` is a pure statevector property; `success_rate` is
+# estimated from calibration error rates on the TRANSPILED circuit, which needs
+# the backend's coupling map and error tables but no simulation. This is the cost
+# claim of M3: one transpilation per candidate, not one noisy execution per input
+# image. It also satisfies run_nsga2.py's assert on
+# (es.est_success_rate and qiskit.use_qiskit).
+qiskit:
+  use_qiskit: False
+
+es:
+  nsga2:
+    # available: expressibility, depth, success_rate, swap_count
+    # [expressibility, success_rate] is the headline pairing: one architecture
+    # objective (device-agnostic) + one mapping objective (device-specific but
+    # cheap). The depth/swap_count variants are the objective-subset ablation in
+    # PAPER_STORY_PURE.md section 5 and have never been searched -- note that
+    # `depth` in particular may be a FIX rather than a completeness check, since
+    # risk R-B measured noisy accuracy peaking at interior depth while
+    # expressibility grows with depth.
+    objectives: [expressibility, success_rate]
+    pop_size: 40
+    n_gen: 40
+    mutation_prob: 0.4
+    expressibility:
+      # PINNED, unlike the hybrid runs. Those used seed: null and were measured at
+      # 28-34% relative score noise, with front-recorded KL values sitting 1.6-2.3
+      # sd optimistic (0.035 recorded vs ~0.088 re-measured). Pinning makes every
+      # candidate share one set of random-parameter draws, so the comparison
+      # BETWEEN candidates is consistent.
+      #
+      # n_pairs/nbins/seed match the pure-quantum M2 arms on
+      # es_expressibility_score (pure_expressibility_commands.txt) so that KL
+      # values are directly comparable between M2 and M3. If you change one, change
+      # both.
+      n_pairs: 150
+      nbins: 75
+      seed: 1234

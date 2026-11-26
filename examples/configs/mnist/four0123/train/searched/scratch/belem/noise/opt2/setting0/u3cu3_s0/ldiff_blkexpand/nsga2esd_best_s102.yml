@@ -1,0 +1,25 @@
+# M4 arm A -- trains the solution chosen off the THREE-OBJECTIVE front of search
+# seed102 by the paper's existing rule, argmin expressibility, from scratch.
+# PURE QUANTUM (expect "Model Size: 192").
+#
+# This arm answers a narrow question: does adding depth as a third objective
+# change what gets DEPLOYED, when the deployment rule is left alone? Expect it
+# may not. argmin expressibility picks the most expressible front member, and
+# expressibility improves monotonically with depth, so this rule tends to select
+# the deepest member of whatever front it is given. Arm B (nsga2esd_cap_s102.yml)
+# is the same front read under a depth cap, and the difference between the two
+# is the whole point of the pair.
+#
+# train.py:121 derives runs/<config-path-with-dots>_seed<debug.seed>; --ckpt-dir
+# does NOT enter into it. The filename is therefore what separates this run from
+# arm B's and from the M3 arm's ...nsga2_best_s102_seed42. debug.seed stays 42
+# in every arm so training randomness is fixed and only the selection varies.
+#
+# Arch and layout come from the best_solution.pt written by
+# export_pareto_solution.py into the --ckpt-dir search directory.
+model:
+  arch:
+    n_blocks: 8
+    n_front_share_blocks: 1
+    n_front_share_wires: 1
+    n_front_share_ops: 1

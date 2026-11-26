@@ -1,0 +1,4 @@
+model:
+  name: q_quanv1
+run:
+  bsz: 64

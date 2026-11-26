@@ -1,0 +1,26 @@
+# Trains the solution chosen off SEARCH REPEAT seed100's Pareto front by
+# --select success_rate, from scratch, PURE QUANTUM (expect "Model Size: 192").
+#
+# Sibling of nsga2_best_s100.yml, differing ONLY in filename. That is the point:
+# train.py:121 derives runs/<config-path-with-dots>_seed<debug.seed> and --ckpt-dir
+# does NOT enter into it, so this file is what keeps the success_rate arm from
+# overwriting the expressibility arm's run dir. Both keep debug.seed=42 so the
+# training randomness is held fixed and only the SELECTION RULE varies.
+#
+#   ->  runs/...ldiff_blkexpand.nsga2_best_sr_s100_seed42
+#   vs  runs/...ldiff_blkexpand.nsga2_best_s100_seed42   (expressibility arm)
+#
+# KNOWN BEFORE RUNNING (measured 2026-08-17): --select success_rate returns
+# n_blocks=1 on all nine fronts -- the minimum-depth extreme, because success_rate
+# is monotonically improved by shallowing the circuit. Same structural trap as
+# --select knee (see MASTER_EXPERIMENT_PLAN 3.2, which measured 15 params -> 56.7%).
+# Expect a capacity-starved circuit, not a competitive one.
+#
+# Arch and layout come from the best_solution.pt that export_pareto_solution.py
+# writes into the --ckpt-dir search dir; see the header of nsga2_best_s100.yml.
+model:
+  arch:
+    n_blocks: 8
+    n_front_share_blocks: 1
+    n_front_share_wires: 1
+    n_front_share_ops: 1

@@ -1,0 +1,964 @@
+{
+ "setting": "p0.4",
+ "rates": {
+  "arch": 0.4,
+  "layout": 0.4
+ },
+ "backend": "FakeAthensV2",
+ "seed": 100,
+ "config": "examples/configs/mnist/four0123/es/athens/noise/opt2/setting0/u3cu3_s0/ldiff_blkexpand/nsga2/blk8s1.1.1_diff7_chu3_sta40.yml",
+ "run_dir": "C:/Neural-Networks-Files/torchquantum/runs/mnist.four0123.train.super.u3cu3_s0.ldiff_blkexpand.blk8s1.1.1_diff7_chu3_sta40_seed42_nopool",
+ "n_unique_evaluations": 1533,
+ "n_expr_computed": 759,
+ "search_seconds": 7210.044650316238,
+ "enumeration_seconds": 15.914981603622437,
+ "same_arch_events": 375,
+ "improving_moves": 177,
+ "n_offspring_total": 1560,
+ "generations": [
+  {
+   "gen": 1,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 0,
+   "improving_moves": 0
+  },
+  {
+   "gen": 2,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 7,
+   "improving_moves": 3
+  },
+  {
+   "gen": 3,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 11,
+   "improving_moves": 7
+  },
+  {
+   "gen": 4,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 11,
+   "improving_moves": 5
+  },
+  {
+   "gen": 5,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 4,
+   "improving_moves": 2
+  },
+  {
+   "gen": 6,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 9,
+   "improving_moves": 4
+  },
+  {
+   "gen": 7,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 16,
+   "improving_moves": 12
+  },
+  {
+   "gen": 8,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 7,
+   "improving_moves": 3
+  },
+  {
+   "gen": 9,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 9,
+   "improving_moves": 7
+  },
+  {
+   "gen": 10,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 6,
+   "improving_moves": 3
+  },
+  {
+   "gen": 11,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 14,
+   "improving_moves": 8
+  },
+  {
+   "gen": 12,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 6,
+   "improving_moves": 2
+  },
+  {
+   "gen": 13,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 13,
+   "improving_moves": 6
+  },
+  {
+   "gen": 14,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 11,
+   "improving_moves": 7
+  },
+  {
+   "gen": 15,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 14,
+   "improving_moves": 8
+  },
+  {
+   "gen": 16,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 13,
+   "improving_moves": 8
+  },
+  {
+   "gen": 17,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 6,
+   "improving_moves": 2
+  },
+  {
+   "gen": 18,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 8,
+   "improving_moves": 5
+  },
+  {
+   "gen": 19,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 12,
+   "improving_moves": 3
+  },
+  {
+   "gen": 20,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 13,
+   "improving_moves": 6
+  },
+  {
+   "gen": 21,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 10,
+   "improving_moves": 4
+  },
+  {
+   "gen": 22,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 11,
+   "improving_moves": 5
+  },
+  {
+   "gen": 23,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 9,
+   "improving_moves": 3
+  },
+  {
+   "gen": 24,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 9,
+   "improving_moves": 3
+  },
+  {
+   "gen": 25,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 9,
+   "improving_moves": 3
+  },
+  {
+   "gen": 26,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 8,
+   "improving_moves": 3
+  },
+  {
+   "gen": 27,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 15,
+   "improving_moves": 5
+  },
+  {
+   "gen": 28,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 6,
+   "improving_moves": 2
+  },
+  {
+   "gen": 29,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 7,
+   "improving_moves": 3
+  },
+  {
+   "gen": 30,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 8,
+   "improving_moves": 4
+  },
+  {
+   "gen": 31,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 10,
+   "improving_moves": 5
+  },
+  {
+   "gen": 32,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 8,
+   "improving_moves": 5
+  },
+  {
+   "gen": 33,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 7,
+   "improving_moves": 2
+  },
+  {
+   "gen": 34,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 12,
+   "improving_moves": 3
+  },
+  {
+   "gen": 35,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 9,
+   "improving_moves": 4
+  },
+  {
+   "gen": 36,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 10,
+   "improving_moves": 5
+  },
+  {
+   "gen": 37,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 8,
+   "improving_moves": 4
+  },
+  {
+   "gen": 38,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 9,
+   "improving_moves": 4
+  },
+  {
+   "gen": 39,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 8,
+   "improving_moves": 4
+  },
+  {
+   "gen": 40,
+   "phase": "joint",
+   "n_offspring": 40,
+   "same_arch_events": 12,
+   "improving_moves": 5
+  }
+ ],
+ "front": [
+  {
+   "solution": {
+    "layout": [
+     4,
+     0,
+     3,
+     1
+    ],
+    "arch": [
+     4,
+     2,
+     4,
+     3,
+     4,
+     1,
+     1,
+     1,
+     4,
+     1,
+     1,
+     2,
+     1,
+     3,
+     2,
+     4,
+     8
+    ]
+   },
+   "expressibility": 0.035526704468704845,
+   "success_rate": 0.08859681358625618
+  },
+  {
+   "solution": {
+    "layout": [
+     3,
+     2,
+     1,
+     4
+    ],
+    "arch": [
+     2,
+     4,
+     2,
+     4,
+     2,
+     1,
+     1,
+     1,
+     4,
+     2,
+     3,
+     1,
+     3,
+     1,
+     4,
+     1,
+     6
+    ]
+   },
+   "expressibility": 0.038764364553305036,
+   "success_rate": 0.1091308937369727
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     4,
+     3,
+     1
+    ],
+    "arch": [
+     3,
+     2,
+     4,
+     4,
+     4,
+     3,
+     3,
+     3,
+     3,
+     4,
+     2,
+     4,
+     1,
+     2,
+     4,
+     3,
+     6
+    ]
+   },
+   "expressibility": 0.03469829574494728,
+   "success_rate": 0.02454531553713552
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "arch": [
+     4,
+     2,
+     2,
+     3,
+     4,
+     2,
+     2,
+     2,
+     4,
+     4,
+     3,
+     1,
+     1,
+     2,
+     4,
+     3,
+     1
+    ]
+   },
+   "expressibility": 0.19534229593409613,
+   "success_rate": 0.7840819558323381
+  },
+  {
+   "solution": {
+    "layout": [
+     1,
+     2,
+     4,
+     0
+    ],
+    "arch": [
+     4,
+     1,
+     1,
+     3,
+     3,
+     2,
+     3,
+     2,
+     3,
+     3,
+     3,
+     3,
+     1,
+     1,
+     4,
+     3,
+     1
+    ]
+   },
+   "expressibility": 0.19889912187236675,
+   "success_rate": 0.8497636347466199
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     2,
+     1,
+     3
+    ],
+    "arch": [
+     3,
+     3,
+     4,
+     3,
+     4,
+     1,
+     2,
+     3,
+     3,
+     4,
+     3,
+     1,
+     1,
+     2,
+     1,
+     3,
+     2
+    ]
+   },
+   "expressibility": 0.04831005344994736,
+   "success_rate": 0.487270628909282
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "arch": [
+     4,
+     2,
+     4,
+     3,
+     2,
+     2,
+     1,
+     1,
+     4,
+     1,
+     2,
+     1,
+     1,
+     4,
+     4,
+     3,
+     4
+    ]
+   },
+   "expressibility": 0.049484591652461246,
+   "success_rate": 0.4995357449605332
+  },
+  {
+   "solution": {
+    "layout": [
+     4,
+     2,
+     3,
+     0
+    ],
+    "arch": [
+     4,
+     3,
+     3,
+     4,
+     2,
+     1,
+     4,
+     1,
+     3,
+     1,
+     3,
+     3,
+     2,
+     1,
+     3,
+     2,
+     4
+    ]
+   },
+   "expressibility": 0.04633440300667205,
+   "success_rate": 0.21986440888839529
+  },
+  {
+   "solution": {
+    "layout": [
+     2,
+     1,
+     0,
+     4
+    ],
+    "arch": [
+     2,
+     1,
+     2,
+     4,
+     3,
+     1,
+     1,
+     1,
+     2,
+     4,
+     2,
+     1,
+     3,
+     2,
+     2,
+     1,
+     1
+    ]
+   },
+   "expressibility": 2.606897822488224,
+   "success_rate": 0.8513970776997956
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "arch": [
+     4,
+     2,
+     3,
+     1,
+     4,
+     2,
+     3,
+     1,
+     4,
+     1,
+     2,
+     2,
+     1,
+     3,
+     4,
+     3,
+     4
+    ]
+   },
+   "expressibility": 0.09189147070020046,
+   "success_rate": 0.6463206035362269
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     2,
+     1,
+     3
+    ],
+    "arch": [
+     3,
+     3,
+     4,
+     3,
+     2,
+     2,
+     4,
+     2,
+     3,
+     4,
+     4,
+     4,
+     3,
+     3,
+     2,
+     4,
+     2
+    ]
+   },
+   "expressibility": 0.04831005344994736,
+   "success_rate": 0.487270628909282
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     2,
+     3,
+     4
+    ],
+    "arch": [
+     4,
+     4,
+     4,
+     1,
+     4,
+     2,
+     1,
+     3,
+     4,
+     4,
+     4,
+     1,
+     3,
+     4,
+     4,
+     1,
+     3
+    ]
+   },
+   "expressibility": 0.04779413893343297,
+   "success_rate": 0.30646069056583186
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     3,
+     1,
+     4
+    ],
+    "arch": [
+     1,
+     3,
+     4,
+     3,
+     1,
+     2,
+     3,
+     4,
+     3,
+     3,
+     1,
+     4,
+     1,
+     4,
+     2,
+     3,
+     4
+    ]
+   },
+   "expressibility": 0.043992509445459176,
+   "success_rate": 0.18605072824391553
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     1,
+     2,
+     4
+    ],
+    "arch": [
+     3,
+     2,
+     4,
+     1,
+     4,
+     4,
+     1,
+     1,
+     3,
+     2,
+     4,
+     4,
+     4,
+     3,
+     3,
+     1,
+     2
+    ]
+   },
+   "expressibility": 0.17002132861131897,
+   "success_rate": 0.7436998896908893
+  },
+  {
+   "solution": {
+    "layout": [
+     3,
+     2,
+     1,
+     0
+    ],
+    "arch": [
+     4,
+     3,
+     2,
+     4,
+     4,
+     3,
+     4,
+     1,
+     1,
+     2,
+     3,
+     3,
+     1,
+     3,
+     3,
+     3,
+     1
+    ]
+   },
+   "expressibility": 0.12485489299189058,
+   "success_rate": 0.6983643831967109
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     2,
+     1,
+     3
+    ],
+    "arch": [
+     3,
+     3,
+     4,
+     3,
+     4,
+     4,
+     3,
+     1,
+     4,
+     1,
+     1,
+     3,
+     1,
+     4,
+     2,
+     2,
+     2
+    ]
+   },
+   "expressibility": 0.04831005344994736,
+   "success_rate": 0.487270628909282
+  },
+  {
+   "solution": {
+    "layout": [
+     2,
+     1,
+     0,
+     3
+    ],
+    "arch": [
+     4,
+     2,
+     4,
+     1,
+     1,
+     1,
+     3,
+     1,
+     4,
+     2,
+     3,
+     2,
+     3,
+     1,
+     2,
+     4,
+     4
+    ]
+   },
+   "expressibility": 0.13716729438377687,
+   "success_rate": 0.7112037186082015
+  },
+  {
+   "solution": {
+    "layout": [
+     1,
+     2,
+     0,
+     4
+    ],
+    "arch": [
+     4,
+     1,
+     2,
+     1,
+     2,
+     4,
+     3,
+     1,
+     2,
+     4,
+     1,
+     4,
+     4,
+     2,
+     1,
+     1,
+     1
+    ]
+   },
+   "expressibility": 0.19889912187236675,
+   "success_rate": 0.8497636347466199
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     3,
+     1,
+     4
+    ],
+    "arch": [
+     1,
+     1,
+     4,
+     4,
+     1,
+     4,
+     3,
+     3,
+     4,
+     4,
+     1,
+     4,
+     4,
+     2,
+     4,
+     3,
+     4
+    ]
+   },
+   "expressibility": 0.041640079418921755,
+   "success_rate": 0.11189485862223532
+  },
+  {
+   "solution": {
+    "layout": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "arch": [
+     4,
+     4,
+     1,
+     3,
+     3,
+     2,
+     2,
+     4,
+     1,
+     1,
+     4,
+     4,
+     2,
+     3,
+     4,
+     1,
+     1
+    ]
+   },
+   "expressibility": 0.08093703691179228,
+   "success_rate": 0.5544876139287952
+  }
+ ],
+ "front_size": 20,
+ "deployed": {
+  "solution": {
+   "layout": [
+    0,
+    4,
+    3,
+    1
+   ],
+   "arch": [
+    3,
+    2,
+    4,
+    4,
+    4,
+    3,
+    3,
+    3,
+    3,
+    4,
+    2,
+    4,
+    1,
+    2,
+    4,
+    3,
+    6
+   ]
+  },
+  "expressibility": 0.03469829574494728,
+  "success_rate": 0.02454531553713552,
+  "n_blocks": 6,
+  "n_params": 117,
+  "success_rate_rank": 108,
+  "success_rate_best": 0.07201955452871846,
+  "enumerated_layout": [
+   0,
+   1,
+   2,
+   3
+  ]
+ }
+}

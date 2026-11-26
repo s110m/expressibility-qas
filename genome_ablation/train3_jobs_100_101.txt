@@ -1,0 +1,14 @@
+staged quito 100
+p0.4 athens 100
+p0.4 belem 100
+split quito 100
+split belem 100
+staged quito 101
+staged athens 101
+staged belem 101
+p0.4 quito 101
+p0.4 athens 101
+p0.4 belem 101
+split quito 101
+split athens 101
+split belem 101

@@ -1,0 +1,9 @@
+# Access revision genome ablation (nsga2_genome_ablation.py): retrains the
+# solution of setting p0.2, search seed 102. Same content as nsga2_best_s100.yml;
+# separate file only so that every cell gets its own run dir.
+model:
+  arch:
+    n_blocks: 8
+    n_front_share_blocks: 1
+    n_front_share_wires: 1
+    n_front_share_ops: 1

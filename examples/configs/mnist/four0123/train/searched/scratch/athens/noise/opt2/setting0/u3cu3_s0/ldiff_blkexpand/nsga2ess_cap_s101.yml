@@ -1,0 +1,24 @@
+# M4-swap arm B -- same front as nsga2ess_best_s101.yml, same argmin-expressibility
+# criterion, restricted first to the half of the front with the LOWER routing
+# overhead (--cap swap_count=p50). From scratch, PURE QUANTUM.
+#
+# This is the arm that puts a mapping signal into the deployment decision. The
+# paper's rule reads only Expr, which is a statevector property with no device
+# in it, so the layout it deploys is a tie-breaking artefact. Capping
+# swap_count makes the exported layout satisfy a routing constraint before
+# expressibility gets to choose among what is left.
+#
+# A percentile, not an absolute count, for the same reason as the depth arm:
+# routing overhead is not on the same scale across backends, so a fixed number
+# would bind on one device and not another and break cross-backend
+# comparability.
+#
+# JUDGE THIS ARM BY LAYOUT RANK FIRST. Accuracy is the end metric, but the
+# claim under test is that the selected layout stops looking like a uniform
+# draw -- that is the 120-layout sweep, not the single eval.
+model:
+  arch:
+    n_blocks: 8
+    n_front_share_blocks: 1
+    n_front_share_wires: 1
+    n_front_share_ops: 1

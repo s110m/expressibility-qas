@@ -1,0 +1,9 @@
+staged quito 102 staged quito
+staged athens 102 staged quito
+staged belem 102 staged belem
+p0.4 quito 102 p0.4 quito
+p0.4 athens 102 p0.4 athens
+p0.4 belem 102 p0.4 belem
+split quito 102 split quito
+split athens 102 staged quito
+split belem 102 split belem

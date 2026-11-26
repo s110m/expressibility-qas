@@ -1,0 +1,100 @@
+{
+ "joint_search": {
+  "layout": [
+   0,
+   1,
+   3,
+   2
+  ],
+  "accuracy_percent": 73.0334375751744,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.quito.noise.opt2.all.local_joint_search_layout.json"
+ },
+ "enumeration": {
+  "layout": [
+   0,
+   1,
+   3,
+   4
+  ],
+  "accuracy_percent": 76.42530671157084,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.quito.noise.opt2.all.local_enumeration_layout.json"
+ },
+ "oracle": {
+  "layout": [
+   0,
+   4,
+   3,
+   1
+  ],
+  "accuracy_percent": 76.23286023574694,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.quito.noise.opt2.all.local_oracle_layout.json"
+ },
+ "qiskit_l2": {
+  "layout": [
+   3,
+   1,
+   0,
+   2
+  ],
+  "accuracy_percent": 69.73779167668992,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.quito.noise.opt2.all.local_qiskit_l2_layout.json"
+ },
+ "qiskit_l3": {
+  "layout": [
+   3,
+   1,
+   2,
+   0
+  ],
+  "accuracy_percent": 74.7895116670676,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.quito.noise.opt2.all.local_qiskit_l3_layout.json"
+ },
+ "mapomatic": {
+  "layout": [
+   3,
+   1,
+   2,
+   0
+  ],
+  "accuracy_percent": 74.7895116670676,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.quito.noise.opt2.all.local_qiskit_l3_layout.json"
+ },
+ "tket": {
+  "layout": [
+   2,
+   1,
+   3,
+   4
+  ],
+  "accuracy_percent": 73.32210728891027,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.quito.noise.opt2.all.local_tket_layout.json"
+ },
+ "qiskit_l2_free": {
+  "layout": null,
+  "accuracy_percent": 67.42843396680298,
+  "n_samples": 4157,
+  "optimization_level": 2,
+  "source": "mnist.four0123.eval.quito.noise.opt2.all.qiskit_layout.local_l2.json"
+ },
+ "qiskit_l3_free": {
+  "layout": null,
+  "accuracy_percent": 67.45248977628097,
+  "n_samples": 4157,
+  "optimization_level": 3,
+  "source": "mnist.four0123.eval.quito.noise.opt2.all.qiskit_layout.local_l3.json"
+ }
+}

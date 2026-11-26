@@ -1,0 +1,506 @@
+[
+ {
+  "setting": "staged",
+  "device": "quito",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 3,
+  "blocks": 8
+ },
+ {
+  "setting": "staged",
+  "device": "athens",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 1,
+  "blocks": 8
+ },
+ {
+  "setting": "staged",
+  "device": "belem",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 2,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.1",
+  "device": "quito",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 18,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.1",
+  "device": "athens",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 98,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.1",
+  "device": "belem",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 23,
+  "blocks": 8
+ },
+ {
+  "setting": "split",
+  "device": "quito",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 99,
+  "blocks": 8
+ },
+ {
+  "setting": "split",
+  "device": "athens",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 98,
+  "blocks": 8
+ },
+ {
+  "setting": "split",
+  "device": "belem",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 9,
+  "blocks": 6
+ },
+ {
+  "setting": "p0.4",
+  "device": "quito",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 18,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.4",
+  "device": "athens",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 108,
+  "blocks": 6
+ },
+ {
+  "setting": "p0.4",
+  "device": "belem",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 108,
+  "blocks": 6
+ },
+ {
+  "setting": "tournament",
+  "device": "quito",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 3,
+  "blocks": 8
+ },
+ {
+  "setting": "tournament",
+  "device": "athens",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 98,
+  "blocks": 6
+ },
+ {
+  "setting": "tournament",
+  "device": "belem",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 33,
+  "blocks": 7
+ },
+ {
+  "setting": "p0.05",
+  "device": "quito",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 60,
+  "blocks": 7
+ },
+ {
+  "setting": "p0.05",
+  "device": "athens",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 98,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.05",
+  "device": "belem",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 54,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.2",
+  "device": "quito",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 18,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.2",
+  "device": "athens",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 98,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.2",
+  "device": "belem",
+  "seed": 100,
+  "state": "done",
+  "s_rank": 54,
+  "blocks": 8
+ },
+ {
+  "setting": "staged",
+  "device": "quito",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 1,
+  "blocks": 6
+ },
+ {
+  "setting": "staged",
+  "device": "athens",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 3,
+  "blocks": 8
+ },
+ {
+  "setting": "staged",
+  "device": "belem",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 24,
+  "blocks": 3
+ },
+ {
+  "setting": "p0.1",
+  "device": "quito",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 40,
+  "blocks": 5
+ },
+ {
+  "setting": "p0.1",
+  "device": "athens",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 5,
+  "blocks": 3
+ },
+ {
+  "setting": "p0.1",
+  "device": "belem",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 3,
+  "blocks": 4
+ },
+ {
+  "setting": "split",
+  "device": "quito",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 30,
+  "blocks": 4
+ },
+ {
+  "setting": "split",
+  "device": "athens",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 28,
+  "blocks": 8
+ },
+ {
+  "setting": "split",
+  "device": "belem",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 57,
+  "blocks": 7
+ },
+ {
+  "setting": "p0.4",
+  "device": "quito",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 55,
+  "blocks": 7
+ },
+ {
+  "setting": "p0.4",
+  "device": "athens",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 65,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.4",
+  "device": "belem",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 95,
+  "blocks": 8
+ },
+ {
+  "setting": "tournament",
+  "device": "quito",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 48,
+  "blocks": 4
+ },
+ {
+  "setting": "tournament",
+  "device": "athens",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 21,
+  "blocks": 8
+ },
+ {
+  "setting": "tournament",
+  "device": "belem",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 1,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.05",
+  "device": "quito",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 10,
+  "blocks": 4
+ },
+ {
+  "setting": "p0.05",
+  "device": "athens",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 41,
+  "blocks": 4
+ },
+ {
+  "setting": "p0.05",
+  "device": "belem",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 12,
+  "blocks": 6
+ },
+ {
+  "setting": "p0.2",
+  "device": "quito",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 47,
+  "blocks": 5
+ },
+ {
+  "setting": "p0.2",
+  "device": "athens",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 56,
+  "blocks": 3
+ },
+ {
+  "setting": "p0.2",
+  "device": "belem",
+  "seed": 101,
+  "state": "done",
+  "s_rank": 1,
+  "blocks": 4
+ },
+ {
+  "setting": "staged",
+  "device": "quito",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 2,
+  "blocks": 4
+ },
+ {
+  "setting": "staged",
+  "device": "athens",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 1,
+  "blocks": 4
+ },
+ {
+  "setting": "staged",
+  "device": "belem",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 2,
+  "blocks": 6
+ },
+ {
+  "setting": "p0.1",
+  "device": "quito",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 81,
+  "blocks": 7
+ },
+ {
+  "setting": "p0.1",
+  "device": "athens",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 12,
+  "blocks": 4
+ },
+ {
+  "setting": "p0.1",
+  "device": "belem",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 54,
+  "blocks": 8
+ },
+ {
+  "setting": "split",
+  "device": "quito",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 2,
+  "blocks": 4
+ },
+ {
+  "setting": "split",
+  "device": "athens",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 12,
+  "blocks": 4
+ },
+ {
+  "setting": "split",
+  "device": "belem",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 43,
+  "blocks": 3
+ },
+ {
+  "setting": "p0.4",
+  "device": "quito",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 118,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.4",
+  "device": "athens",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 14,
+  "blocks": 5
+ },
+ {
+  "setting": "p0.4",
+  "device": "belem",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 89,
+  "blocks": 3
+ },
+ {
+  "setting": "tournament",
+  "device": "quito",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 65,
+  "blocks": 6
+ },
+ {
+  "setting": "tournament",
+  "device": "athens",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 82,
+  "blocks": 6
+ },
+ {
+  "setting": "tournament",
+  "device": "belem",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 114,
+  "blocks": 7
+ },
+ {
+  "setting": "p0.05",
+  "device": "quito",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 1,
+  "blocks": 4
+ },
+ {
+  "setting": "p0.05",
+  "device": "athens",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 58,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.05",
+  "device": "belem",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 9,
+  "blocks": 3
+ },
+ {
+  "setting": "p0.2",
+  "device": "quito",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 39,
+  "blocks": 8
+ },
+ {
+  "setting": "p0.2",
+  "device": "athens",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 37,
+  "blocks": 7
+ },
+ {
+  "setting": "p0.2",
+  "device": "belem",
+  "seed": 102,
+  "state": "done",
+  "s_rank": 4,
+  "blocks": 4
+ }
+]

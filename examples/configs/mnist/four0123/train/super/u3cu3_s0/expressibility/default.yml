@@ -1,0 +1,9 @@
+model:
+  sampler:
+    strategy:
+      name: expressibility_curriculum
+      order: low_to_high
+      n_candidates: 2000
+      n_pairs: 150
+      nbins: 75
+      seed: 123

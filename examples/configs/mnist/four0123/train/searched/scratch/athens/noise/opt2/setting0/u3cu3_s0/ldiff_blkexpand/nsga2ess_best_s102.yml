@@ -1,0 +1,20 @@
+# M4-swap arm A -- the solution chosen off the [expressibility, success_rate,
+# swap_count] front of search seed102 by argmin expressibility, the paper's
+# existing rule. From scratch, PURE QUANTUM (expect "Model Size: 192").
+#
+# Pairs with nsga2ess_cap_s102.yml, which reads the same front under
+# --cap swap_count=p50. The pair separates "the objective did it" from "the
+# deployment rule did it": argmin expressibility ignores swap_count entirely at
+# selection time, so this arm can only benefit if the third objective changed
+# which solutions reach the front at all.
+#
+# train.py:121 derives runs/<config-path-with-dots>_seed<debug.seed>; --ckpt-dir
+# does not enter into it, so the filename is what separates this run from the
+# capped arm, from the depth arm's nsga2esd_*, and from M3's nsga2_best_s*.
+# debug.seed stays 42 everywhere so only the selection varies.
+model:
+  arch:
+    n_blocks: 8
+    n_front_share_blocks: 1
+    n_front_share_wires: 1
+    n_front_share_ops: 1

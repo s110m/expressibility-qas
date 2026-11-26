@@ -1,0 +1,23 @@
+# M4 arm B -- same THREE-OBJECTIVE front as nsga2esd_best_s100.yml, same
+# argmin-expressibility rule, but restricted first to the shallower half of the
+# front (--cap depth=p50). From scratch, PURE QUANTUM ("Model Size: 192").
+#
+# WHY a percentile and not a fixed depth. Transpiled depth is not on the same
+# scale across backends, so one absolute number would bind hard on Quito and not
+# at all on Athens. "The shallower half of this front" means the same thing on
+# every device, which is what keeps the three backends comparable -- the same
+# requirement that made the paper reject per-backend selection rules.
+#
+# WHY p50 and not the knee. The knee over (expressibility, success_rate) was
+# measured to land on a 15-parameter circuit scoring 56.7%, because success_rate
+# improves monotonically as the circuit shallows and dominates any balanced
+# compromise. A cap is not a compromise: it keeps argmin expressibility as the
+# criterion and only removes the deepest half from consideration.
+#
+# Reads the SAME pareto_front.pt as arm A. Only the export flags differ.
+model:
+  arch:
+    n_blocks: 8
+    n_front_share_blocks: 1
+    n_front_share_wires: 1
+    n_front_share_ops: 1

@@ -1,0 +1,135 @@
+{
+ "run_dir": "runs/mnist.four0123.train.searched.scratch.belem.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.nsga2_best_s102_seed42",
+ "eval_config": "examples/configs/mnist/four0123/eval/belem/noise/opt2/all.yml",
+ "backend": "FakeBelemV2",
+ "arch": [
+  4,
+  4,
+  3,
+  4,
+  4,
+  4,
+  4,
+  3,
+  4,
+  4,
+  4,
+  3,
+  1,
+  2,
+  1,
+  3,
+  8
+ ],
+ "searched_layout": [
+  1,
+  0,
+  3,
+  2
+ ],
+ "enumerated_layout": [
+  4,
+  3,
+  1,
+  2
+ ],
+ "seed_transpiler": 42,
+ "n_layouts": 120,
+ "tools": {
+  "joint_search": {
+   "layout": [
+    1,
+    0,
+    3,
+    2
+   ],
+   "success_rate": 0.011337293216144953,
+   "success_rate_rank": 58,
+   "sweep300_accuracy_percent": 77.0,
+   "sweep300_rank": 40
+  },
+  "enumeration": {
+   "layout": [
+    4,
+    3,
+    1,
+    2
+   ],
+   "success_rate": 0.017935060788505434,
+   "success_rate_rank": 1,
+   "sweep300_accuracy_percent": 75.66666666666667,
+   "sweep300_rank": 106
+  },
+  "qiskit_l2": {
+   "layout": [
+    1,
+    2,
+    3,
+    0
+   ],
+   "success_rate": 0.01404566358119379,
+   "success_rate_rank": 18,
+   "sweep300_accuracy_percent": 76.66666666666667,
+   "sweep300_rank": 57,
+   "layout_passes": [
+    "SetLayout",
+    "VF2Layout",
+    "SabreLayout",
+    "VF2PostLayout",
+    "ApplyLayout"
+   ],
+   "VF2Layout_stop_reason": "VF2LayoutStopReason.NO_SOLUTION_FOUND",
+   "VF2PostLayout_stop_reason": "VF2PostLayoutStopReason.SOLUTION_FOUND"
+  },
+  "qiskit_l3": {
+   "layout": [
+    1,
+    2,
+    3,
+    0
+   ],
+   "success_rate": 0.01404566358119379,
+   "success_rate_rank": 18,
+   "sweep300_accuracy_percent": 76.66666666666667,
+   "sweep300_rank": 57,
+   "layout_passes": [
+    "SetLayout",
+    "VF2Layout",
+    "SabreLayout",
+    "VF2PostLayout",
+    "ApplyLayout"
+   ],
+   "VF2Layout_stop_reason": "VF2LayoutStopReason.NO_SOLUTION_FOUND",
+   "VF2PostLayout_stop_reason": "VF2PostLayoutStopReason.NO_BETTER_SOLUTION_FOUND"
+  },
+  "mapomatic": {
+   "layout": [
+    1,
+    2,
+    3,
+    0
+   ],
+   "success_rate": 0.01404566358119379,
+   "success_rate_rank": 18,
+   "sweep300_accuracy_percent": 76.66666666666667,
+   "sweep300_rank": 57,
+   "n_matches": 6,
+   "best_score": 0.7357796631407115
+  },
+  "tket": {
+   "layout": [
+    3,
+    1,
+    0,
+    4
+   ],
+   "success_rate": 0.0056461861081838274,
+   "success_rate_rank": 112,
+   "sweep300_accuracy_percent": 78.33333333333333,
+   "sweep300_rank": 5,
+   "unplaced_filled": [
+    3
+   ]
+  }
+ }
+}

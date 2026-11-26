@@ -1,0 +1,137 @@
+{
+ "backend": "FakeWashingtonV2",
+ "n_qubits": 127,
+ "run_dir": "runs/mnist.four0123.train.searched.scratch.quito.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.nsga2_best_s100_seed42",
+ "arch": [
+  3,
+  1,
+  2,
+  3,
+  2,
+  2,
+  2,
+  3,
+  3,
+  2,
+  4,
+  4,
+  2,
+  3,
+  2,
+  1,
+  6
+ ],
+ "counts": {
+  "2": {
+   "connected_subsets": 142,
+   "candidate_layouts": 284,
+   "ordered_assignments": 16002,
+   "count_seconds": 0.0001870999999482592
+  },
+  "3": {
+   "connected_subsets": 191,
+   "candidate_layouts": 1146,
+   "ordered_assignments": 2000250,
+   "count_seconds": 0.0007049999999253487
+  },
+  "4": {
+   "connected_subsets": 272,
+   "candidate_layouts": 6528,
+   "ordered_assignments": 248031000,
+   "count_seconds": 0.0009832999999161984
+  },
+  "5": {
+   "connected_subsets": 426,
+   "candidate_layouts": 51120,
+   "ordered_assignments": 30507813000,
+   "count_seconds": 0.001502399999935733
+  },
+  "6": {
+   "connected_subsets": 691,
+   "candidate_layouts": 497520,
+   "ordered_assignments": 3721953186000,
+   "count_seconds": 0.003690200000164623
+  },
+  "7": {
+   "connected_subsets": 1175,
+   "candidate_layouts": 5922000,
+   "ordered_assignments": 450356335506000,
+   "count_seconds": 0.006048099999588885
+  },
+  "8": {
+   "connected_subsets": 2047,
+   "candidate_layouts": 82535040,
+   "ordered_assignments": 54042760260720000,
+   "count_seconds": 0.014960699999846838
+  }
+ },
+ "n_layouts_scored": 6528,
+ "wall_seconds": 68.8048319999998,
+ "jobs": 4,
+ "transpile_seconds_total": 131.14964049999844,
+ "score_seconds_total": 96.69520930001045,
+ "transpile_seconds_median": 0.01952690000007351,
+ "score_seconds_median": 0.01442254999983561,
+ "best_layout": [
+  36,
+  51,
+  50,
+  49
+ ],
+ "best_success_rate": 0.47458407267570957,
+ "median_success_rate": 0.14472562790308754,
+ "tools": {
+  "qiskit_l2": {
+   "layout": [
+    36,
+    51,
+    50,
+    49
+   ],
+   "success_rate": 0.47458407267570957,
+   "rank": 1,
+   "in_candidates": true,
+   "layout_passes": [
+    "SetLayout",
+    "VF2Layout",
+    "SabreLayout",
+    "VF2PostLayout",
+    "ApplyLayout"
+   ],
+   "VF2Layout_stop_reason": "VF2LayoutStopReason.NO_SOLUTION_FOUND",
+   "VF2PostLayout_stop_reason": "VF2PostLayoutStopReason.SOLUTION_FOUND"
+  },
+  "qiskit_l3": {
+   "layout": [
+    50,
+    51,
+    36,
+    32
+   ],
+   "success_rate": 0.46652240932631583,
+   "rank": 3,
+   "in_candidates": true,
+   "layout_passes": [
+    "SetLayout",
+    "VF2Layout",
+    "SabreLayout",
+    "VF2PostLayout",
+    "ApplyLayout"
+   ],
+   "VF2Layout_stop_reason": "VF2LayoutStopReason.NO_SOLUTION_FOUND",
+   "VF2PostLayout_stop_reason": "VF2PostLayoutStopReason.SOLUTION_FOUND"
+  },
+  "mapomatic": {
+   "layout": [
+    50,
+    51,
+    36,
+    32
+   ],
+   "success_rate": 0.46652240932631583,
+   "rank": 3,
+   "n_matches": 476,
+   "best_score": 0.2333315384257697
+  }
+ }
+}

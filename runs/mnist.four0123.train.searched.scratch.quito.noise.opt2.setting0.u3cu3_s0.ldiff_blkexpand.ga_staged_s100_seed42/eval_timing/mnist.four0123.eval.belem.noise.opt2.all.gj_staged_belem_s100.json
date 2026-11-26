@@ -1,0 +1,1 @@
+{"step": "evaluation", "status": "completed", "start_time": "2026-10-19T20:46:54.998358", "end_time": "2026-10-19T20:52:23.093946", "elapsed_seconds": 328.0962029000002, "config": "examples/configs/mnist/four0123/eval/belem/noise/opt2/all.yml", "run_dir": "runs/mnist.four0123.train.searched.scratch.quito.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.ga_staged_s100_seed42"}

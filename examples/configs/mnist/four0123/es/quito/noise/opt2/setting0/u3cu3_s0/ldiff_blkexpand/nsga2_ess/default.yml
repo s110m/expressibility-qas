@@ -1,0 +1,50 @@
+# THREE-OBJECTIVE NSGA-II with ROUTING OVERHEAD (M4-swap). Sibling of
+# ../nsga2/default.yml and ../nsga2_esd/default.yml, differing only in the third
+# objective. Population, budget, mutation rate and the pinned expressibility
+# estimator are identical to both, so all three arms are paired at the same
+# search seeds.
+#
+# WHY swap_count, AND HOW IT DIFFERS FROM THE nsga2_esd ARM. Those two arms
+# attack different halves of the problem:
+#
+#   nsga2_esd  adds DEPTH        -- an ARCHITECTURE counterweight. It targets
+#                                   over-deepening, which expressibility alone
+#                                   cannot resist because Expr improves
+#                                   monotonically with depth.
+#   nsga2_ess  adds SWAP_COUNT   -- a MAPPING signal. It targets the finding
+#                                   that the returned layout ranks 59.8 of 120,
+#                                   indistinguishable from a uniform draw.
+#
+# swap_count is the two-qubit-gate delta between the untranspiled and transpiled
+# circuit (core/tools/nsga2.py:63,157-159). No fake backend here has 'swap' in
+# its basis set, so the router's SWAPs are decomposed into ~3 CX each and a
+# literal swap op never survives to be counted; the delta is proportional to the
+# SWAPs actually inserted for THIS layout. That makes it the only objective
+# available that is decoupled from BOTH the architecture's own gate count and
+# the calibration tables -- unlike depth and success_rate, which each entangle
+# mapping quality with something else. It is therefore the cleanest way to put
+# selection pressure directly on the four layout genes.
+#
+# WHAT IT DOES NOT CHANGE. The genome is still 17 architecture genes to 4 layout
+# genes, so the per-move probability argument that explains the middling mapping
+# is untouched. This tests whether a cleaner mapping SIGNAL is enough on its own,
+# with the gene ratio left alone.
+#
+# READ THE LAYOUT RANK, NOT ONLY THE ACCURACY. The question this arm answers is
+# whether the selected layout moves off the null (rank 59.8 of 120 against 60.5
+# for a uniform draw), which needs the 120-layout sweep, not the single
+# noisy eval. See the sweep stage of run_m4_three_objective.sh.
+qiskit:
+  use_qiskit: False
+
+es:
+  nsga2:
+    # available: expressibility, depth, success_rate, swap_count
+    objectives: [expressibility, success_rate, swap_count]
+    pop_size: 40
+    n_gen: 40
+    mutation_prob: 0.4
+    expressibility:
+      n_pairs: 150
+      nbins: 75
+      seed: 1234

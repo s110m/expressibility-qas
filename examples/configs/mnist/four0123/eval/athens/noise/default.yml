@@ -1,0 +1,3 @@
+qiskit:
+  noise_model_name: FakeAthensV2
+  max_jobs: 48

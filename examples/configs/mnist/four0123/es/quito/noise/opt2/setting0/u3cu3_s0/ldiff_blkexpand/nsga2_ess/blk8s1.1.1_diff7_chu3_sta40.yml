@@ -1,0 +1,12 @@
+# Pure-quantum block/share parameters for the swap_count arm. Content-identical
+# to ../nsga2/blk8s1.1.1_diff7_chu3_sta40.yml; the name is kept so es_runs
+# directory names line up across M1/M2/M3/M4.
+#
+# These four keys must be repeated in every leaf: torchpack's recursive config
+# load merges only ancestor default.yml files, never sibling leaves.
+model:
+  arch:
+    n_blocks: 8
+    n_front_share_blocks: 1
+    n_front_share_wires: 1
+    n_front_share_ops: 1

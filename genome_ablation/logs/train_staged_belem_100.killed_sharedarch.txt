@@ -1,0 +1,61 @@
+[32m[2026-10-19 12:53:22.438][0m [1mC:\Neural-Networks-Files\Quantum-AI\torchquantum\new_venv\Scripts\python.exe examples/train.py examples/configs/mnist/four0123/train/searched/scratch/belem/noise/opt2/setting0/u3cu3_s0/ldiff_blkexpand/ga_staged_s100.yml --ckpt-dir=genome_ablation/staged/FakeBelemV2_s100 debug.seed=42 run.workers_per_gpu=0[0m
+[32m[2026-10-19 12:53:22.439][0m [1mTraining started: "runs/mnist.four0123.train.searched.scratch.belem.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.ga_staged_s100_seed42".
+dataset:
+  digits_of_interest: [0, 1, 2, 3]
+  n_test_samples: None
+  n_valid_samples: None
+  input_name: image
+  target_name: digit
+  fashion: False
+trainer:
+  name: q_trainer
+  add_noise: False
+  act_quant: False
+  act_quant_skip_last_node: True
+  act_quant_loss: True
+  act_quant_loss_lambda: 10
+run:
+  n_warm_epochs: 0
+  bsz: 256
+qiskit:
+  use_qiskit: False
+  use_real_qc: False
+  backend_name: None
+  noise_model_name: None
+  n_shots: 8192
+  initial_layout: None
+  ignore_ckpt_layout: False
+  optimization_level: 2
+  max_jobs: 1
+ckpt:
+  load_ckpt: True
+  load_trainer: False
+  name: checkpoints/best_solution.pt
+  weight_from_scratch: True
+model:
+  transpile_before_run: False
+  load_op_list: False
+  arch:
+    n_wires: 4
+    down_sample_kernel_size: 6
+    encoder_op_list_name: 4x4_ryzxy
+    n_layers_per_block: 2
+    q_layer_name: u3cu3_s0
+    n_blocks: 8
+    n_front_share_blocks: 1
+    n_front_share_wires: 1
+    n_front_share_ops: 1
+  name: super_qfc0
+  sampler:
+    strategy:
+      name: ldiff_blkexpand[0m
+[32m[2026-10-19 12:53:22.439][0m [1m[timing] "subcircuit_training" started.[0m
+[32m[2026-10-19 12:53:23.967][0m [1mNo noise model specified or fetched.[0m
+[32m[2026-10-19 12:53:23.967][0m [1mInitialized AerSampler.[0m
+[32m[2026-10-19 12:53:23.985][0m [33m[1mLoading checkpoint![0m
+[32m[2026-10-19 12:53:24.012][0m [33m[1mDO NOT load weight, train weights from scratch![0m
+[32m[2026-10-19 12:53:24.013][0m [1mLoading the solution {'layout': [4, 3, 1, 2], 'arch': [4, 2, 4, 3, 4, 1, 1, 1, 4, 1, 1, 2, 1, 3, 2, 4, 8]}[0m
+[32m[2026-10-19 12:53:24.013][0m [1mOriginal score: 0.035526704468704845[0m
+[32m[2026-10-19 12:53:24.236][0m [1mModel Size: 192[0m
+[32m[2026-10-19 12:53:34.428][0m [1mEpoch 1/200 started.[0m
+  0% 0/92 [00:00<?, ?it/s][loss] = 1.37, [lr/lr_group0] = 0.005, [nll_loss] = 1.37:   0% 0/92 [00:03<?, ?it/s][loss] = 1.37, [lr/lr_group0] = 0.005, [nll_loss] = 1.37:   1% 1/92 [00:03<05:19,  3.51s/it][loss] = 1.34, [lr/lr_group0] = 0.005, [nll_loss] = 1.34:   1% 1/92 [00:08<05:19,  3.51s/it][loss] = 1.34, [lr/lr_group0] = 0.005, [nll_loss] = 1.34:   2% 2/92 [00:08<06:41,  4.46s/it][loss] = 1.33, [lr/lr_group0] = 0.005, [nll_loss] = 1.33:   2% 2/92 [00:10<06:41,  4.46s/it][loss] = 1.33, [lr/lr_group0] = 0.005, [nll_loss] = 1.33:   3% 3/92 [00:10<04:37,  3.12s/it][loss] = 1.32, [lr/lr_group0] = 0.005, [nll_loss] = 1.32:   3% 3/92 [00:11<04:37,  3.12s/it][loss] = 1.32, [lr/lr_group0] = 0.005, [nll_loss] = 1.32:   4% 4/92 [00:11<03:26,  2.34s/it]

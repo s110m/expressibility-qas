@@ -1,0 +1,102 @@
+{
+ "p0.1": {
+  "summary": {
+   "events": 903.0,
+   "predicted": 89.47041146963923,
+   "improving": 695.0,
+   "blocks": 8.0,
+   "params": 114.0,
+   "expr": 0.035526704468704845,
+   "sr_rank": 18.0,
+   "front": 40.0,
+   "minutes": 31.69467093547185,
+   "acc_joint": null,
+   "acc_enum": null,
+   "n": 1,
+   "sr_rank_top10": 0,
+   "sr_rank_is_1": 0,
+   "enum_minus_joint": null,
+   "n_retrained": 0
+  },
+  "rows": [
+   {
+    "cell": "FakeQuitoV2_s100",
+    "events": 903,
+    "predicted": 89.47041146963923,
+    "improving": 695,
+    "blocks": 8,
+    "params": 114,
+    "expr": 0.035526704468704845,
+    "sr_rank": 18,
+    "front": 40,
+    "minutes": 31.69467093547185,
+    "acc_joint": null,
+    "acc_enum": null
+   }
+  ]
+ },
+ "staged": {
+  "summary": {
+   "events": 1057.0,
+   "predicted": null,
+   "improving": 715.3333333333334,
+   "blocks": 8.0,
+   "params": 114.0,
+   "expr": 0.035526704468704845,
+   "sr_rank": 2.0,
+   "front": 36.333333333333336,
+   "minutes": 31.211925980779863,
+   "acc_joint": null,
+   "acc_enum": null,
+   "n": 3,
+   "sr_rank_top10": 3,
+   "sr_rank_is_1": 1,
+   "enum_minus_joint": null,
+   "n_retrained": 0
+  },
+  "rows": [
+   {
+    "cell": "FakeAthensV2_s100",
+    "events": 1043,
+    "predicted": null,
+    "improving": 706,
+    "blocks": 8,
+    "params": 114,
+    "expr": 0.035526704468704845,
+    "sr_rank": 1,
+    "front": 29,
+    "minutes": 34.54465204874675,
+    "acc_joint": null,
+    "acc_enum": null
+   },
+   {
+    "cell": "FakeBelemV2_s100",
+    "events": 1059,
+    "predicted": null,
+    "improving": 712,
+    "blocks": 8,
+    "params": 114,
+    "expr": 0.035526704468704845,
+    "sr_rank": 2,
+    "front": 40,
+    "minutes": 30.90249684651693,
+    "acc_joint": null,
+    "acc_enum": null
+   },
+   {
+    "cell": "FakeQuitoV2_s100",
+    "events": 1069,
+    "predicted": null,
+    "improving": 728,
+    "blocks": 8,
+    "params": 114,
+    "expr": 0.035526704468704845,
+    "sr_rank": 3,
+    "front": 40,
+    "minutes": 28.188629047075906,
+    "acc_joint": null,
+    "acc_enum": null
+   }
+  ]
+ }
+}

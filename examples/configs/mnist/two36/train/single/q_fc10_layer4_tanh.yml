@@ -1,0 +1,5 @@
+model:
+  name: q_fc10
+  arch:
+    n_blocks: 4
+    tanh: True

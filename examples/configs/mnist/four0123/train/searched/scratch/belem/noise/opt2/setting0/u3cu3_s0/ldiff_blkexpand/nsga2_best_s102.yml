@@ -1,0 +1,37 @@
+# Trains the solution chosen off SEARCH REPEAT seed102's Pareto front, from
+# scratch, PURE QUANTUM (no classical layers -- expect "Model Size: 192").
+#
+# Byte-identical in content to its _s10x siblings and to
+# ../hybrid_full/nsga2_best_s102.yml. It exists only so each search repeat gets its
+# OWN run dir: train.py on this branch has no --run-dir-suffix flag and derives
+# runs/<config-path-with-dots>_seed<debug.seed>, so three repeats sharing one config
+# file AND one training seed would overwrite each other. Splitting on the FILENAME
+# lets every repeat keep debug.seed=42 -- the point of the protocol, training
+# randomness held fixed so only the searched (arch, layout) varies.
+#
+# The architecture and qubit layout are NOT written here. They come from the
+# best_solution.pt that export_pareto_solution.py writes into the search run dir:
+#
+#   python examples/export_pareto_solution.py \
+#       es_runs/<...ldiff_blkexpand.nsga2.blk8s1.1.1_diff7_chu3_sta40_seed102>/checkpoints/pareto_front_scored.pt \
+#       --select accuracy
+#   python examples/train.py <this file> \
+#       --ckpt-dir=es_runs/<...same dir...> debug.seed=42
+#
+# Carrying the solution through the checkpoint rather than hardcoding
+# model.arch.sample_arch is what puts a 'solution' key into every checkpoint this
+# run saves, which is what lets eval.py recover the searched qubit layout later
+# (eval.py:374-376).
+#
+# Inherited from the chain, do not repeat here:
+#   train/searched/default.yml          ckpt.load_ckpt: True,
+#                                       ckpt.name: checkpoints/best_solution.pt,
+#                                       trainer.name: q_trainer
+#   train/searched/scratch/default.yml  ckpt.weight_from_scratch: True
+#   .../u3cu3_s0/ldiff_blkexpand/       pure-quantum model + supernet strategy
+model:
+  arch:
+    n_blocks: 8
+    n_front_share_blocks: 1
+    n_front_share_wires: 1
+    n_front_share_ops: 1

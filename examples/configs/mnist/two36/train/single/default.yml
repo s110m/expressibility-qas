@@ -1,0 +1,9 @@
+trainer:
+  name: q_trainer
+
+model:
+  arch:
+    tanh: False
+    encoder:
+      name: rxyzx
+
