@@ -1,0 +1,104 @@
+2026-08-19 10:20:06.417 | __main__:main:143 | INFO | /home/seyedali/Documents/Hamid/torchquantum/venv/bin/python examples/train.py examples/configs/mnist/four0123/train/searched/scratch/athens/noise/opt2/setting0/u3cu3_s0/ldiff_blkexpand/blk8s1.1.1_diff7_chu3_sta40.yml --ckpt-dir=es_runs/mnist.four0123.es.athens.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.blk8s1.1.1_diff7_chu3_sta40_seed402/ --run-dir-suffix=from-search402 debug.seed=42
+2026-08-19 10:20:06.418 | __main__:main:150 | INFO | Training started: "runs/mnist.four0123.train.searched.scratch.athens.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.blk8s1.1.1_diff7_chu3_sta40_seed42_from-search402".
+dataset:
+  digits_of_interest: [0, 1, 2, 3]
+  n_test_samples: None
+  n_valid_samples: None
+  input_name: image
+  target_name: digit
+  fashion: False
+trainer:
+  name: q_trainer
+  add_noise: False
+  act_quant: False
+  act_quant_skip_last_node: True
+  act_quant_loss: True
+  act_quant_loss_lambda: 10
+run:
+  n_warm_epochs: 0
+  bsz: 256
+qiskit:
+  use_qiskit: False
+  use_real_qc: False
+  backend_name: None
+  noise_model_name: None
+  n_shots: 8192
+  initial_layout: None
+  ignore_ckpt_layout: False
+  optimization_level: 2
+  max_jobs: 1
+ckpt:
+  load_ckpt: True
+  load_trainer: False
+  name: checkpoints/best_solution.pt
+  weight_from_scratch: True
+model:
+  transpile_before_run: False
+  load_op_list: False
+  arch:
+    n_wires: 4
+    down_sample_kernel_size: 6
+    encoder_op_list_name: 4x4_ryzxy
+    n_layers_per_block: 2
+    q_layer_name: u3cu3_s0
+    n_blocks: 8
+    n_front_share_blocks: 1
+    n_front_share_wires: 1
+    n_front_share_ops: 1
+  name: super_qfc0
+  sampler:
+    strategy:
+      name: ldiff_blkexpand
+      n_diffs: 7
+      n_chunks: 3
+      n_stages: 40
+2026-08-19 10:20:06.418 | core.tools.timing:__enter__:33 | INFO | [timing] "subcircuit_training" started.
+2026-08-19 10:20:07.290 | torchquantum.plugin.qiskit.qiskit_processor:qiskit_init:238 | INFO | No noise model specified or fetched.
+2026-08-19 10:20:07.291 | torchquantum.plugin.qiskit.qiskit_processor:qiskit_init:247 | INFO | Initialized AerSampler.
+2026-08-19 10:20:07.303 | __main__:main:202 | WARNING | Loading checkpoint!
+2026-08-19 10:20:07.343 | __main__:main:220 | WARNING | DO NOT load weight, train weights from scratch!
+2026-08-19 10:20:07.344 | __main__:main:224 | INFO | Loading the solution {'layout': [0, 1, 2, 4], 'arch': [3, 3, 4, 3, 4, 2, 3, 1, 1, 2, 4, 2, 3, 1, 1, 2, 3]}
+2026-08-19 10:20:07.344 | __main__:main:225 | INFO | Original score: 1.1031619310379028
+2026-08-19 10:20:07.551 | __main__:main:340 | INFO | Model Size: 192
+2026-08-19 10:20:07.817 | torchpack.train.trainer:train:69 | INFO | Epoch 1/200 started.
+2026-08-19 10:20:16.454 | torchpack.train.trainer:train:85 | INFO | Training finished in 8.64 seconds.
+2026-08-19 10:20:17.548 | torchpack.callbacks.inference:_trigger:42 | INFO | Inference finished in 1.09 seconds.
+2026-08-19 10:20:19.146 | torchpack.callbacks.inference:_trigger:42 | INFO | Inference finished in 1.6 seconds.
+2026-08-19 10:20:19.153 | core.trainers:_state_dict:198 | WARNING | No v_c_reg_mapping found, will not save it.
+2026-08-19 10:20:19.174 | torchpack.callbacks.checkpoint:_trigger:111 | INFO | Checkpoint saved: "runs/mnist.four0123.train.searched.scratch.athens.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.blk8s1.1.1_diff7_chu3_sta40_seed42_from-search402/checkpoints/max-acc-valid.pt" (64.459).
+2026-08-19 10:20:19.179 | core.trainers:_state_dict:198 | WARNING | No v_c_reg_mapping found, will not save it.
+2026-08-19 10:20:19.200 | torchpack.callbacks.checkpoint:_trigger:47 | INFO | Checkpoint saved: "runs/mnist.four0123.train.searched.scratch.athens.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.blk8s1.1.1_diff7_chu3_sta40_seed42_from-search402/checkpoints/step-92.pt".
+2026-08-19 10:20:19.200 | torchpack.callbacks.writers:_trigger:60 | INFO | 
++ [acc/test] = 64.879
++ [acc/valid] = 64.459
++ [acc/valid/max] = 64.459
++ [loss] = 1.1002
++ [loss/test] = 1.0877
++ [loss/valid] = 1.087
++ [lr/lr_group0] = 0.005
++ [nll_loss] = 1.1002
+2026-08-19 10:20:19.201 | torchpack.callbacks.progress:_trigger_epoch:63 | INFO | Estimated time left: 37 minutes 45 seconds.
+2026-08-19 10:20:19.201 | torchpack.train.trainer:train:89 | INFO | Epoch finished in 11.4 seconds.
+2026-08-19 10:20:19.201 | torchpack.train.trainer:train:69 | INFO | Epoch 2/200 started.
+2026-08-19 10:20:27.390 | torchpack.train.trainer:train:85 | INFO | Training finished in 8.19 seconds.
+2026-08-19 10:20:28.483 | torchpack.callbacks.inference:_trigger:42 | INFO | Inference finished in 1.09 seconds.
+2026-08-19 10:20:30.065 | torchpack.callbacks.inference:_trigger:42 | INFO | Inference finished in 1.58 seconds.
+2026-08-19 10:20:30.079 | core.trainers:_state_dict:198 | WARNING | No v_c_reg_mapping found, will not save it.
+2026-08-19 10:20:30.100 | torchpack.callbacks.checkpoint:_trigger:111 | INFO | Checkpoint saved: "runs/mnist.four0123.train.searched.scratch.athens.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.blk8s1.1.1_diff7_chu3_sta40_seed42_from-search402/checkpoints/max-acc-valid.pt" (70.194).
+2026-08-19 10:20:30.106 | core.trainers:_state_dict:198 | WARNING | No v_c_reg_mapping found, will not save it.
+2026-08-19 10:20:30.127 | torchpack.callbacks.checkpoint:_trigger:47 | INFO | Checkpoint saved: "runs/mnist.four0123.train.searched.scratch.athens.noise.opt2.setting0.u3cu3_s0.ldiff_blkexpand.blk8s1.1.1_diff7_chu3_sta40_seed42_from-search402/checkpoints/step-184.pt".
+2026-08-19 10:20:30.127 | torchpack.callbacks.writers:_trigger:60 | INFO | 
++ [acc/test] = 70.411
++ [acc/valid] = 70.194
++ [acc/valid/max] = 70.194
++ [loss] = 1.0378
++ [loss/test] = 1.0417
++ [loss/valid] = 1.0349
++ [lr/lr_group0] = 0.0049997
++ [nll_loss] = 1.0378
+2026-08-19 10:20:30.128 | torchpack.callbacks.progress:_trigger_epoch:63 | INFO | Estimated time left: 36 minutes 48 seconds.
+2026-08-19 10:20:30.128 | torchpack.train.trainer:train:89 | INFO | Epoch finished in 10.9 seconds.
+2026-08-19 10:20:30.128 | torchpack.train.trainer:train:69 | INFO | Epoch 3/200 started.
+2026-08-19 10:20:38.368 | torchpack.train.trainer:train:85 | INFO | Training finished in 8.24 seconds.
+2026-08-19 10:20:39.544 | torchpack.callbacks.inference:_trigger:42 | INFO | Inference finished in 1.18 seconds.
+2026-08-19 10:20:40.796 | core.tools.timing:__exit__:45 | INFO | [timing] "subcircuit_training" failed in 0:00:34 (34.38s).
